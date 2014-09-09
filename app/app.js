@@ -8,5 +8,9 @@ angular.module('myApp', [
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.
+  when('/view1',{
+  	templateUrl: 'view1/view1.html',
+  	controller: 'BirthdayCtrl'
+  }).otherwise({redirectTo: '/view1'});
 }]);

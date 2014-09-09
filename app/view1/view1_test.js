@@ -6,11 +6,18 @@ describe('myApp.view1 module', function() {
 
   describe('view1 controller', function(){
 
-    it('should ....', inject(function($controller) {
+    it('should define the controller', inject(function($controller) {
       //spec body
-      var view1Ctrl = $controller('View1Ctrl');
-      expect(view1Ctrl).toBeDefined();
+      var 	mockScope={},
+      		BirthdayCtrl = $controller('BirthdayCtrl',{$scope:mockScope});
+      expect(BirthdayCtrl).toBeDefined();
     }));
 
+    it('should define a birthday in the scope', inject(function($controller) {
+      //spec body
+      var mockScope={},
+          BirthdayCtrl = $controller('BirthdayCtrl',{$scope:mockScope});
+      expect(mockScope.birthday).toBeDefined();
+    }));
   });
 });
