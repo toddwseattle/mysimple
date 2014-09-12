@@ -1,6 +1,8 @@
 module.exports = function(config){
   config.set({
 
+    colors:false,
+
     basePath : './',
 
     files : [
