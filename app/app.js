@@ -42,16 +42,20 @@ app.factory('Facebook', function() {
       getAuth: function() {
         return self.auth;
       },
-      getMe : function() {
+      setMe : function() {
         FB.api('/me', function(response) {
 		    console.log('Good to see you, ' + response.name + '.');
 		    self.me=response;
 		           
 		    });
-		return self.me;
 	  	},
-      login: function() {
+	  getMe : function(){
 
+	  	return self.me;
+	  },
+      login: function() {
+      	if( FBHASINIT ) {
+      	console.log('FB has initialized');	
         FB.login(function(response) {
           if (response.authResponse) {
             self.auth = response.authResponse;
@@ -59,6 +63,9 @@ app.factory('Facebook', function() {
             console.log('Facebook login failed', response);
           }
         })
+    	} else {
+    		console.log('FB login called before initialize');
+    	}
 
       },
 
@@ -80,11 +87,12 @@ app.factory('Facebook', function() {
   });
 
 // facebook sdk init stuff
-
+var FBHASINIT=false;
 window.fbAsyncInit = function() {
   FB.init({
-    appId: '467875209900414'
+    appId: '137736170011' // my app id 'TestApp2'
   });
+  FBHASINIT=true;
 };
 
 // Load the SDK Asynchronously

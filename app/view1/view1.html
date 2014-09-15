@@ -10,7 +10,15 @@
     <span class="error" ng-show="bdayform.bdaytext.$error.required">
       Required!</span><br>
 	<button class="btn" ng-click="calculatebdayfromtext(birthdaytext)">Show My Akan Name</button>
-	<p>{{akanname}}</p>
+	<p ng-bind="akanname"></p>
+
+    <button class="btn" ng-click="gogetme">You Bet I'm {{me}}</button>
 	   
 
+</div>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
 </div>
