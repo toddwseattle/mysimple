@@ -1,9 +1,15 @@
 <p>This is the partial for view 1.</p>
 <div ng-controller="BirthdayCtrl">
 	    Birthday: <input type="text" name="bdaytext" ng-model="birthdaytext" required>
+
+        <label for="bithdaygender">Gender</label>
+        <select id="birthdaygender" class="form-control" ng-model="genderinput">
+            <option>Female</option>
+            <option>Male</option>
+        </select>
     <span class="error" ng-show="bdayform.bdaytext.$error.required">
       Required!</span><br>
-	<button class="btn" ng-click="calculatebdayfromtext(birthdaytext)"></button> 
+	<button class="btn" ng-click="calculatebdayfromtext(birthdaytext)">Show My Akan Name</button>
 	<p>{{akanname}}</p>
 	   
 
