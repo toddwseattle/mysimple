@@ -9,6 +9,7 @@ myApp.controller('BirthdayCtrl', function($scope) {
 	
 	$scope.birthdaytext=initbday.toDateString();
 	$scope.genderinput="Male";
+	$scope.akanname="-Not implemented-";
 	$scope.calculatebdayfromtext = function(birthdaytext)
 		{
 			return("Not implemented");
