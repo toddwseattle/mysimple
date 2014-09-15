@@ -1,10 +1,10 @@
 'use strict';
 
-var myApp=angular.module('myApp.view1', ['ngRoute']);
+var myApp=angular.module('myApp.view1', ['ngRoute','myApp.Facebook']);
 
 
 
-myApp.controller('BirthdayCtrl', function($scope) {
+myApp.controller('BirthdayCtrl', function($scope,Facebook) {
 	var initbday=new Date(Date.now());
 	
 	$scope.birthdaytext="not implemented";
@@ -17,5 +17,4 @@ myApp.controller('BirthdayCtrl', function($scope) {
 		}  // calculatebdayfromtext
 });
 
-// facebook factory
 
